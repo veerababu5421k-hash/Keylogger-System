@@ -1,0 +1,92 @@
+# ==========================================
+# SecureShield AI - Core Agent Configuration
+# ==========================================
+
+# General agent settings
+agent:
+  # The name of this host or machine. Used to identify which computer generated an alert.
+  node_name: "secureshield-local-agent"
+  # How often (in seconds) the main agent loop ticks or runs health checks.
+  tick_interval: 5.0
+
+# Logging engine configuration
+logging:
+  # The path to the standard human-readable operational log file
+  log_file: "logs/agent.log"
+  # The path to write structured JSON alert files for SIEM or threat engines
+  alert_file: "logs/alerts.json"
+  # The default logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  console_level: "INFO"
+  file_level: "INFO"
+
+# Individual behavior monitor configurations
+monitors:
+  # Process Monitor Settings
+  process:
+    enabled: true
+    # How often (in seconds) to scan the process list (/proc table)
+    scan_interval: 2.0
+    # Threshold in percent for flagging high CPU usage by a single process
+    cpu_threshold: 80.0
+    # Threshold in percent for flagging high memory usage by a single process
+    memory_threshold: 15.0
+    # Whitelisted processes that are trusted and will not trigger alerts (e.g. system systemd)
+    whitelist_pids: []
+    whitelist_names:
+      - "systemd"
+      - "bash"
+      - "sshd"
+
+  # Keyboard Activity Monitor Settings
+  keyboard:
+    enabled: true
+    # Directory where Linux maps hardware inputs
+    device_path: "/dev/input"
+    # Anomaly keystroke threshold (keystrokes/sec) that triggers keylogger alerts
+    keystroke_rate_threshold: 20.0
+
+  # Persistence Monitor Settings
+  persistence:
+    enabled: true
+    # How often (in seconds) to scan startup folders
+    scan_interval: 10.0
+    # Standard startup pathways on Linux
+    monitored_paths:
+      - "/etc/systemd/system"
+      - "/etc/init.d"
+      - "~/.config/autostart"
+
+  # File Monitor Settings
+  file:
+    enabled: true
+    # Core system files we must protect from tampering
+    monitored_files:
+      - "/etc/passwd"
+      - "/etc/shadow"
+      - "/etc/sudoers"
+
+  # Network Monitor Settings
+  network:
+    enabled: true
+    # How often (in seconds) to check socket connections
+    scan_interval: 3.0
+    # Whitelisted IP addresses (e.g., localhost, local DNS)
+    whitelist_ips:
+      - "127.0.0.1"
+      - "0.0.0.0"
+
+# Threat Scoring Engine Settings
+threat_engine:
+  # The threshold (0.0 to 100.0) above which an alert is immediately logged
+  alert_risk_threshold: 50.0
+
+# AI Security Analyst Configuration
+ai_analyst:
+  enabled: true
+  provider: "ollama"
+  # AI Model name to use
+  model_name: "qwen2.5-coder:3b"
+  # URL where Ollama is running
+  ollama_url: "http://localhost:11434"
+  # How long to aggregate alerts before asking AI for an incident analysis (in seconds)
+  analysis_interval: 60.0
