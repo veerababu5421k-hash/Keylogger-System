@@ -1,7 +1,7 @@
 
-# SecureShield AI - System & Software Requirements
+# KeyShield AI - System & Software Requirements
 
-This document specifies the software, hardware, system configurations, and permissions needed to develop and run **SecureShield AI**.
+This document specifies the software, hardware, system configurations, and permissions needed to develop and run **KeyShield AI**.
 
 ---
 
@@ -20,7 +20,7 @@ This document specifies the software, hardware, system configurations, and permi
 > [!WARNING]
 > By default, Linux restricts access to keyboard input files under `/dev/input/` to the **root** user and members of the **input** group. This is a critical security control to prevent unauthorized programs (like keyloggers) from reading keystrokes.
 > 
-> To monitor these events, SecureShield AI must run with:
+> To monitor these events, KeyShield AI must run with:
 > 1. **Root / Sudo privileges** (e.g., `sudo python3 src/agent.py`), OR
 > 2. **Explicit Group Permissions:** The executing user must be added to the `input` group (e.g., `sudo usermod -aG input $USER`).
 

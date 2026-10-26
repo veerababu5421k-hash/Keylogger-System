@@ -34,7 +34,7 @@ class Orchestrator:
     def __init__(self, raw_config: Dict[str, Any] = None):
         self.config = raw_config or {}
         self.event_bus = EventBus()
-        node_name = self.config.get("agent", {}).get("node_name", "secureshield-agent")
+        node_name = self.config.get("agent", {}).get("node_name", "keyshield-agent")
         self.system_state = SystemState(node_name=node_name)
         self.running = False
 

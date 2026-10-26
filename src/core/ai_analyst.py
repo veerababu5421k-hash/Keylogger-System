@@ -4,7 +4,7 @@ import json
 from google import genai
 from google.genai import errors
 
-logger = logging.getLogger("SecureShield")
+logger = logging.getLogger("KeyShield")
 
 # Local Mock Database for fallback explanation if API is unavailable
 MOCK_ANALYSES = {

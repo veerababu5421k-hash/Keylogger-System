@@ -13,7 +13,7 @@ from src.core.config import load_config
 from src.core.ai_analyst import AiAnalyst
 
 def run_daily_summary():
-    print("[*] Starting SecureShield AI Daily Security Summary Scheduler...")
+    print("[*] Starting KeyShield AI Daily Security Summary Scheduler...")
     config = load_config()
     alert_file = config.get("logging", {}).get("alert_file", "logs/alerts.json")
     
@@ -91,7 +91,7 @@ def run_daily_summary():
     report_filename = f"daily_report_{now.strftime('%Y-%m-%d')}.md"
     report_path = os.path.join(reports_dir, report_filename)
 
-    report_content = f"""# SecureShield AI - Daily Security Report
+    report_content = f"""# KeyShield AI - Daily Security Report
 Date: {now.strftime('%Y-%m-%d %H:%M:%S')}
 Audit window: {yesterday.strftime('%Y-%m-%d %H:%M:%S')} to {now.strftime('%Y-%m-%d %H:%M:%S')}
 

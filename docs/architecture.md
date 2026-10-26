@@ -1,6 +1,6 @@
-# SecureShield AI - System Architecture
+# KeyShield AI - System Architecture
 
-This document describes the high-level design, component boundaries, and data flows within **SecureShield AI**.
+This document describes the high-level design, component boundaries, and data flows within **KeyShield AI**.
 
 ---
 
@@ -16,7 +16,7 @@ The diagram below represents the logical flow of metrics and alerts from the ope
        |                      |                    |                    |
        v                      v                    v                    v
 +------+----------------------+--------------------+--------------------+---------+
-|                         SECURESHIELD DETECTION MONITORS                         |
+|                         KEYSHIELD DETECTION MONITORS                         |
 |  [Process Monitor]  [Keyboard Monitor]   [File Monitor]     [Network Monitor]   |
 |  - CPU/Memory       - Key Rate           - Integrity        - Exfil IPs         |
 

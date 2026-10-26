@@ -1,5 +1,5 @@
 """
-Standardized Security Event Schema for SecureShield AI.
+Standardized Security Event Schema for KeyShield AI.
 Every agent produces events conforming to this schema for ingestion by the Orchestrator.
 """
 
@@ -19,7 +19,7 @@ class SecurityEvent:
     process_name: Optional[str] = None
     severity: str = "INFO"  # INFO, LOW, MEDIUM, HIGH, CRITICAL
     confidence: float = 1.0  # 0.0 to 1.0
-    source: str = "secureshield-node"
+    source: str = "keyshield-node"
     payload: Dict[str, Any] = field(default_factory=dict)
     metadata: Dict[str, Any] = field(default_factory=dict)
 
@@ -49,7 +49,7 @@ class SecurityEvent:
             process_name=data.get("process_name"),
             severity=data.get("severity") or data.get("level", "INFO"),
             confidence=float(data.get("confidence", 1.0)),
-            source=data.get("source", "secureshield-node"),
+            source=data.get("source", "keyshield-node"),
             payload=data.get("payload") or data.get("extra_data") or {},
             metadata=data.get("metadata", {})
         )

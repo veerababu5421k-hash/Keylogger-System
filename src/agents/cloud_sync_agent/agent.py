@@ -80,7 +80,7 @@ class CloudSyncAgent(threading.Thread):
         }
 
         payload = {
-            "device_id": self.config.raw_config.get("agent", {}).get("node_name", "secureshield-local-node"),
+            "device_id": self.config.raw_config.get("agent", {}).get("node_name", "keyshield-local-node"),
             "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "events_count": len(batch),
             "events": batch

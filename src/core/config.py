@@ -4,7 +4,7 @@ import yaml
 # Hardcoded fallback configuration to ensure the agent runs even if the yaml file is deleted or corrupt.
 DEFAULT_CONFIG = {
     "agent": {
-        "node_name": "secureshield-fallback-agent",
+        "node_name": "keyshield-fallback-agent",
         "tick_interval": 5.0
     },
     "logging": {

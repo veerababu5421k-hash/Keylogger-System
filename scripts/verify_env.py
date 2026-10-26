@@ -78,7 +78,7 @@ def check_input_subsystem():
 
 def main():
     print("=" * 60)
-    print("SecureShield AI - Environmental Verification Utility")
+    print("KeyShield AI - Environmental Verification Utility")
     print("=" * 60)
     
     py_ok = check_python_version()
@@ -89,7 +89,7 @@ def main():
     print("=" * 60)
     
     if py_ok and deps_ok and input_ok:
-        print("[SUCCESS] Environment fully configured for SecureShield AI.")
+        print("[SUCCESS] Environment fully configured for KeyShield AI.")
         sys.exit(0)
     else:
         print("[WARNING] Verification failed. Please check missing items above.")

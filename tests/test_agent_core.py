@@ -7,7 +7,7 @@ from src.core.threat_engine import ThreatEngine, get_threat_state, clear_threat_
 from src.core.ai_analyst import AiAnalyst
 from src.monitors.process_monitor import ProcessMonitor
 
-class TestSecureShieldCore(unittest.TestCase):
+class TestKeyShieldCore(unittest.TestCase):
     
     def setUp(self):
         clear_threat_state()

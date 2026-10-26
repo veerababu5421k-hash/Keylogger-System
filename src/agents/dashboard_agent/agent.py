@@ -38,7 +38,7 @@ class DashboardAgent(threading.Thread):
         self.logger = get_dashboard_logger()
         self.orchestrator = orchestrator
         self.server = None
-        self.app = FastAPI(title="SecureShield AI Dashboard API", version="2.0.0")
+        self.app = FastAPI(title="KeyShield AI Dashboard API", version="2.0.0")
 
         self.app.add_middleware(
             CORSMiddleware,
@@ -59,7 +59,7 @@ class DashboardAgent(threading.Thread):
                 summary["agent_live"] = True
                 summary["protection_enabled"] = getattr(self.orchestrator, "protection_enabled", True)
                 return summary
-            return {"status": "STOPPED", "agent_live": False, "node_name": "secureshield", "uptime": 0, "alert_count": 0, "protection_enabled": True, "metrics": {}}
+            return {"status": "STOPPED", "agent_live": False, "node_name": "keyshield", "uptime": 0, "alert_count": 0, "protection_enabled": True, "metrics": {}}
 
         @self.app.get("/api/protection")
         def get_protection():

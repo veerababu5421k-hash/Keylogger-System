@@ -12,4 +12,4 @@ class CloudSyncAgentConfig:
         self.endpoint: str = cloud_cfg.get("endpoint", "http://localhost:8000/api/v1/telemetry/sync")
         self.sync_interval: float = cloud_cfg.get("sync_interval", 15.0)
         self.batch_size: int = cloud_cfg.get("batch_size", 20)
-        self.api_key: str = cloud_cfg.get("api_key", "secureshield-dev-key")
+        self.api_key: str = cloud_cfg.get("api_key", "keyshield-dev-key")

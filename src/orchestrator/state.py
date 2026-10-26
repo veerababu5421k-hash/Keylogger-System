@@ -13,7 +13,7 @@ class SystemState:
     Holds global system telemetry, thread statuses, alert history, and logs.
     Updated strictly by the Orchestrator.
     """
-    def __init__(self, node_name: str = "secureshield-agent"):
+    def __init__(self, node_name: str = "keyshield-agent"):
         self.node_name = node_name
         self.start_time = time.time()
         self.lock = threading.Lock()

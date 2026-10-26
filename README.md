@@ -1,8 +1,8 @@
-# SecureShield AI 🛡️🤖
+# KeyShield AI 🛡️🤖
 
-**SecureShield AI** is an intelligent, behavior-based keylogger detection and prevention platform for Linux systems.
+**KeyShield AI** is an intelligent, behavior-based keylogger detection and prevention platform for Linux systems.
 
-Rather than relying strictly on known file hashes or static antivirus signatures, SecureShield AI uses a **Multi-Agent Architecture** to monitor physical keyboard access, process spawning, persistence hooks, sensitive file modifications, and network connections—processing alerts via a deterministic **Threat Engine** and an **AI Security Analyst**.
+Rather than relying strictly on known file hashes or static antivirus signatures, KeyShield AI uses a **Multi-Agent Architecture** to monitor physical keyboard access, process spawning, persistence hooks, sensitive file modifications, and network connections—processing alerts via a deterministic **Threat Engine** and an **AI Security Analyst**.
 
 ---
 

@@ -50,7 +50,7 @@ def setup_logger(config):
     # ----------------------------------------------------
     # 1. Configure the Operational Logger (General Logs)
     # ----------------------------------------------------
-    op_logger = logging.getLogger("SecureShield")
+    op_logger = logging.getLogger("KeyShield")
     op_logger.setLevel(logging.DEBUG)  # Capture all levels at root logger
     op_logger.propagate = False         # Prevent sending logs to default root handlers
 
@@ -79,7 +79,7 @@ def setup_logger(config):
     # ----------------------------------------------------
     # 2. Configure the Security Alert Logger (JSON Alerts)
     # ----------------------------------------------------
-    alert_logger = logging.getLogger("SecureShieldAlert")
+    alert_logger = logging.getLogger("KeyShieldAlert")
     alert_logger.setLevel(logging.INFO)
     alert_logger.propagate = False
 
@@ -100,7 +100,7 @@ def get_logger():
     """
     Helper to get the operational logger instance.
     """
-    return logging.getLogger("SecureShield")
+    return logging.getLogger("KeyShield")
 
 def log_security_alert(module_name, message, risk_score, pid=None, extra_info=None):
     """
@@ -113,8 +113,8 @@ def log_security_alert(module_name, message, risk_score, pid=None, extra_info=No
         pid (int, optional): Process ID responsible for the event
         extra_info (dict, optional): Any extra context (IPs, files, command lines)
     """
-    alert_logger = logging.getLogger("SecureShieldAlert")
-    op_logger = logging.getLogger("SecureShield")
+    alert_logger = logging.getLogger("KeyShieldAlert")
+    op_logger = logging.getLogger("KeyShield")
 
     # Construct the telemetry dictionary
     extra_data = {

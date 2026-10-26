@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SUMMARY_SCRIPT="$PROJECT_ROOT/cron/summary.py"
 
-echo "[*] Setting up SecureShield AI daily summary crontab entry..."
+echo "[*] Setting up KeyShield AI daily summary crontab entry..."
 
 if [ ! -f "$SUMMARY_SCRIPT" ]; then
     echo "[-] Error: Summary script not found at $SUMMARY_SCRIPT"

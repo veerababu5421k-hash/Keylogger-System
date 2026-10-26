@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# SecureShield AI - Cron Automation Installer Script
+# KeyShield AI - Cron Automation Installer Script
 # Configures scheduled security tasks (scans, log rotation, daily reports).
 # Provides full transparency without silent crontab modification.
 # ==============================================================================
@@ -8,7 +8,7 @@
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PYTHON_EXEC="$(which python3)"
 
-echo "🛡️ SecureShield AI - Cron Automation Manager"
+echo "🛡️ KeyShield AI - Cron Automation Manager"
 echo "------------------------------------------------"
 echo "Project Root: $PROJECT_ROOT"
 echo "Python Exec : $PYTHON_EXEC"
@@ -31,14 +31,14 @@ show_preview() {
 install_cron() {
     show_preview
     echo "Installing crontab entries..."
-    (crontab -l 2>/dev/null | grep -v "SecureShield"; echo "# SecureShield AI Scheduled Tasks"; echo "$CRON_JOB_1"; echo "$CRON_JOB_2") | crontab -
+    (crontab -l 2>/dev/null | grep -v "KeyShield"; echo "# KeyShield AI Scheduled Tasks"; echo "$CRON_JOB_1"; echo "$CRON_JOB_2") | crontab -
     echo "✅ Crontab successfully installed!"
 }
 
 uninstall_cron() {
-    echo "Removing SecureShield AI crontab entries..."
-    crontab -l 2>/dev/null | grep -v "SecureShield" | crontab -
-    echo "✅ SecureShield AI crontab entries removed!"
+    echo "Removing KeyShield AI crontab entries..."
+    crontab -l 2>/dev/null | grep -v "KeyShield" | crontab -
+    echo "✅ KeyShield AI crontab entries removed!"
 }
 
 case "$1" in

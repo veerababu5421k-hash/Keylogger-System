@@ -10,9 +10,9 @@ from pydantic import BaseModel
 from datetime import datetime
 
 # Retrieve parent logger
-logger = logging.getLogger("SecureShield")
+logger = logging.getLogger("KeyShield")
 
-app = FastAPI(title="SecureShield AI Agent API")
+app = FastAPI(title="KeyShield AI Agent API")
 
 # Enable CORS for local React dashboard
 app.add_middleware(

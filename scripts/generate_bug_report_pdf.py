@@ -46,7 +46,7 @@ class NumberedCanvas(canvas.Canvas):
         if self._pageNumber > 1:
             self.setFont("Helvetica-Bold", 8)
             self.setFillColor(colors.HexColor("#0F172A"))
-            self.drawString(36, 756, "SECURESHIELD AI")
+            self.drawString(36, 756, "KEYSHIELD AI")
             
             self.setFont("Helvetica", 8)
             self.setFillColor(header_color)
@@ -59,7 +59,7 @@ class NumberedCanvas(canvas.Canvas):
         # Running Footer (All Pages)
         self.setFont("Helvetica", 8)
         self.setFillColor(footer_color)
-        self.drawString(36, 28, "CONFIDENTIAL & PROPRIETARY — SECURESHIELD AI QA & SECURITY TEAM")
+        self.drawString(36, 28, "CONFIDENTIAL & PROPRIETARY — KEYSHIELD AI QA & SECURITY TEAM")
         
         page_str = f"Page {self._pageNumber} of {page_count}"
         self.drawRightString(576, 28, page_str)
@@ -71,7 +71,7 @@ class NumberedCanvas(canvas.Canvas):
         self.restoreState()
 
 
-def build_pdf_report(output_filename="SecureShield_AI_Bug_Report.pdf"):
+def build_pdf_report(output_filename="KeyShield_AI_Bug_Report.pdf"):
     doc = SimpleDocTemplate(
         output_filename,
         pagesize=letter,
@@ -172,14 +172,14 @@ def build_pdf_report(output_filename="SecureShield_AI_Bug_Report.pdf"):
     # ---------------------------------------------------------
     # HEADER / COVER SECTION
     # ---------------------------------------------------------
-    story.append(Paragraph("SecureShield AI | Technical Bug Report", title_style))
+    story.append(Paragraph("KeyShield AI | Technical Bug Report", title_style))
     story.append(Paragraph("System Defect Audit, Vulnerability Analysis & Quality Assurance Report", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=c_accent, spaceBefore=0, spaceAfter=10))
 
     # Meta Info Table
     meta_data = [
         [
-            Paragraph("<b>Project:</b> SecureShield AI Detection Engine", body_style),
+            Paragraph("<b>Project:</b> KeyShield AI Detection Engine", body_style),
             Paragraph(f"<b>Audit Date:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", body_style)
         ],
         [
@@ -208,7 +208,7 @@ def build_pdf_report(output_filename="SecureShield_AI_Bug_Report.pdf"):
     story.append(Paragraph("1. Executive Summary & Defect Overview", h1_style))
     summary_text = (
         "During a comprehensive static code review, empirical unit testing, and dynamic log analysis of "
-        "the <b>SecureShield AI</b> keylogger detection platform, a total of <b>7 software defects</b> "
+        "the <b>KeyShield AI</b> keylogger detection platform, a total of <b>7 software defects</b> "
         "and operational anomalies were identified. These defects range from critical risk handling in automated "
         "threat neutralization to concurrency race conditions in core threat scoring registers and data logging pipeline."
     )
@@ -549,7 +549,7 @@ def build_pdf_report(output_filename="SecureShield_AI_Bug_Report.pdf"):
     action_box.append(Paragraph("4. Recommended Action Plan & QA Roadmap", h1_style))
     
     rec_text = (
-        "To elevate <b>SecureShield AI</b> to enterprise-grade quality and prevent false positive mitigations, "
+        "To elevate <b>KeyShield AI</b> to enterprise-grade quality and prevent false positive mitigations, "
         "the engineering team should execute the following prioritised remediation phases:"
     )
     action_box.append(Paragraph(rec_text, body_style))
@@ -612,7 +612,7 @@ def build_pdf_report(output_filename="SecureShield_AI_Bug_Report.pdf"):
             Paragraph("<b>Approved By:</b> Chief Information Security Officer (CISO)", body_style)
         ],
         [
-            Paragraph("Signature: <i>SecureShield Audit Automated Engine</i>", body_style),
+            Paragraph("Signature: <i>KeyShield Audit Automated Engine</i>", body_style),
             Paragraph("Date: " + datetime.now().strftime('%Y-%m-%d'), body_style)
         ]
     ]
@@ -631,5 +631,5 @@ def build_pdf_report(output_filename="SecureShield_AI_Bug_Report.pdf"):
     print(f"✅ Refined Bug Report PDF generated: {os.path.abspath(output_filename)}")
 
 if __name__ == "__main__":
-    out_path = sys.argv[1] if len(sys.argv) > 1 else "SecureShield_AI_Bug_Report.pdf"
+    out_path = sys.argv[1] if len(sys.argv) > 1 else "KeyShield_AI_Bug_Report.pdf"
     build_pdf_report(out_path)

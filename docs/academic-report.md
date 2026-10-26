@@ -1,12 +1,12 @@
 # ACADEMIC MAJOR PROJECT REPORT
-## SecureShield AI: Multi-Agent Behavior-Based Keylogger Detection and Prevention Platform
+## KeyShield AI: Multi-Agent Behavior-Based Keylogger Detection and Prevention Platform
 
 ---
 
 ### 1. ABSTRACT
 Modern software keyloggers present a critical threat to endpoint security on Linux systems by covertly capturing raw keystrokes, personal credentials, and session tokens. Traditional signature-based antivirus solutions often fail to detect novel or custom-built keylogger scripts because they lack static signature entries. 
 
-This project presents **SecureShield AI**, a production-oriented, multi-agent cybersecurity platform designed to detect software keyloggers through behavioral analysis rather than signature matching. By deploying 11 isolated monitoring and service agents coordinated strictly through a central Orchestrator, SecureShield AI captures real-time process, input device (`/dev/input/`), persistence, file, and network telemetry. The platform integrates a deterministic Threat Scoring Engine with a local Artificial Intelligence (AI) Security Analyst (powered by Ollama / `qwen2.5-coder:3b` and Gemini AI) to deliver clear incident explanations, risk assessments, and user-confirmed defensive mitigation commands.
+This project presents **KeyShield AI**, a production-oriented, multi-agent cybersecurity platform designed to detect software keyloggers through behavioral analysis rather than signature matching. By deploying 11 isolated monitoring and service agents coordinated strictly through a central Orchestrator, KeyShield AI captures real-time process, input device (`/dev/input/`), persistence, file, and network telemetry. The platform integrates a deterministic Threat Scoring Engine with a local Artificial Intelligence (AI) Security Analyst (powered by Ollama / `qwen2.5-coder:3b` and Gemini AI) to deliver clear incident explanations, risk assessments, and user-confirmed defensive mitigation commands.
 
 ---
 
@@ -17,7 +17,7 @@ Linux endpoint security requires continuous, low-overhead monitoring of hardware
 3. Modifying local keystroke log dumps.
 4. Exfiltrating stolen telemetry over unauthorized outbound sockets.
 
-SecureShield AI addresses these threats using a modular **Multi-Agent Architecture** where specialized agents continuously monitor system subsystems and stream telemetry to a central Orchestrator.
+KeyShield AI addresses these threats using a modular **Multi-Agent Architecture** where specialized agents continuously monitor system subsystems and stream telemetry to a central Orchestrator.
 
 ---
 
@@ -31,7 +31,7 @@ Existing Linux endpoint security tools suffer from key limitations:
 
 ### 4. EXISTING SYSTEM VS. PROPOSED SYSTEM
 
-| Feature | Existing Systems (Antivirus / Signature Scanners) | Proposed System (SecureShield AI) |
+| Feature | Existing Systems (Antivirus / Signature Scanners) | Proposed System (KeyShield AI) |
 | :--- | :--- | :--- |
 | **Detection Method** | Static file hash comparison (YARA / ClamAV) | Real-time behavioral correlation (Input + Process + Network + Persistence) |
 | **Zero-Day Keylogger Protection** | Poor (Requires pre-existing malware signature) | Excellent (Detects raw input binding & exfiltration behavior) |
@@ -135,7 +135,7 @@ Existing Linux endpoint security tools suffer from key limitations:
 ---
 
 ### 11. CONCLUSION
-SecureShield AI demonstrates that combining a **Multi-Agent Architecture** with deterministic threat scoring and local AI models provides superior zero-day software keylogger protection compared to static antivirus solutions.
+KeyShield AI demonstrates that combining a **Multi-Agent Architecture** with deterministic threat scoring and local AI models provides superior zero-day software keylogger protection compared to static antivirus solutions.
 
 ---
 

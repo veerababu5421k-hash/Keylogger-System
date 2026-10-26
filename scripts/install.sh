@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# SecureShield AI - Master Installation & Verification Script
+# KeyShield AI - Master Installation & Verification Script
 # Follows: CHECK -> UNDERSTAND -> INSTALL -> VERIFY workflow.
 # ==============================================================================
 
@@ -9,7 +9,7 @@ set -e
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"
 
-echo "🛡️ SecureShield AI Platform Installation & Setup"
+echo "🛡️ KeyShield AI Platform Installation & Setup"
 echo "=========================================================="
 
 # 1. CHECK ENVIRONMENT
@@ -68,7 +68,7 @@ python3 -m unittest discover -s tests
 
 echo ""
 echo "=========================================================="
-echo "✅ SecureShield AI installation and verification COMPLETE!"
+echo "✅ KeyShield AI installation and verification COMPLETE!"
 echo ""
 echo "To start the system:"
 echo "  1. Backend Agent:  python3 src/agent.py"

@@ -1,3 +1,3 @@
 """
-SecureShield AI Backend Package.
+KeyShield AI Backend Package.
 """

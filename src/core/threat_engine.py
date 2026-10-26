@@ -2,7 +2,7 @@ import os
 import logging
 from src.core.logger import log_security_alert
 
-logger = logging.getLogger("SecureShield")
+logger = logging.getLogger("KeyShield")
 
 # Global Registry of active threat metrics by PID
 _threat_state = {}
@@ -15,7 +15,7 @@ class ThreatEngine:
     def __init__(self, config):
         self.config = config
         self.alert_threshold = self.config.get("threat_engine", {}).get("alert_risk_threshold", 50.0)
-        self.logger = logging.getLogger("SecureShield")
+        self.logger = logging.getLogger("KeyShield")
 
     def report_event(self, monitor, message, risk_score, pid=None, extra_info=None):
         """

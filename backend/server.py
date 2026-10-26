@@ -1,5 +1,5 @@
 """
-SecureShield AI Backend Cloud API Server.
+KeyShield AI Backend Cloud API Server.
 Provides REST API endpoints for multi-device management, event synchronization, incident reports, and mitigation action logs.
 """
 
@@ -16,7 +16,7 @@ from backend.models import (
     SecurityEventRecord, IncidentRecord, MitigationActionRecord, AuditLogRecord
 )
 
-app = FastAPI(title="SecureShield AI Cloud Backend API", version="2.0.0")
+app = FastAPI(title="KeyShield AI Cloud Backend API", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -27,7 +27,7 @@ app.add_middleware(
 )
 
 # Initialize Database
-db_path = os.path.join(os.path.dirname(__file__), "..", "logs", "secureshield.db")
+db_path = os.path.join(os.path.dirname(__file__), "..", "logs", "keyshield.db")
 os.makedirs(os.path.dirname(os.path.abspath(db_path)), exist_ok=True)
 engine, SessionLocal = init_db(f"sqlite:///{os.path.abspath(db_path)}")
 
@@ -60,7 +60,7 @@ class MitigationConfirmRequest(BaseModel):
 
 @app.get("/api/v1/health")
 def get_health():
-    return {"status": "HEALTHY", "service": "SecureShield Cloud Backend API", "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    return {"status": "HEALTHY", "service": "KeyShield Cloud Backend API", "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
 
 @app.post("/api/v1/devices/register")
 def register_device(req: DeviceRegisterRequest):

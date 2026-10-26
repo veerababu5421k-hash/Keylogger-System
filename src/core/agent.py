@@ -10,9 +10,9 @@ from src.monitors.persistence_monitor import PersistenceMonitor
 from src.monitors.file_monitor import FileMonitor
 from src.monitors.network_monitor import NetworkMonitor
 
-class SecureShieldAgent:
+class KeyShieldAgent:
     """
-    Main orchestrator class for the SecureShield AI agent.
+    Main orchestrator class for the KeyShield AI agent.
     Manages the lifecycle (startup, active loop, and teardown) of behavioral monitors.
     """
     def __init__(self, config):
@@ -25,7 +25,7 @@ class SecureShieldAgent:
         
         # Pull tick interval from config (how often the main thread runs health checks)
         self.tick_interval = self.config.get("agent", {}).get("tick_interval", 5.0)
-        self.node_name = self.config.get("agent", {}).get("node_name", "secureshield-agent")
+        self.node_name = self.config.get("agent", {}).get("node_name", "keyshield-agent")
 
     def start(self):
         """
@@ -35,7 +35,7 @@ class SecureShieldAgent:
             self.logger.warning("Agent is already running.")
             return
 
-        self.logger.info("Starting SecureShield AI Agent on node: %s", self.node_name)
+        self.logger.info("Starting KeyShield AI Agent on node: %s", self.node_name)
         self.running = True
 
         # Register POSIX signal handlers for graceful termination
@@ -83,7 +83,7 @@ class SecureShieldAgent:
             self.logger.warning("Agent is not running.")
             return
 
-        self.logger.info("Shutdown request received. Terminating SecureShield Agent...")
+        self.logger.info("Shutdown request received. Terminating KeyShield Agent...")
         self.running = False
 
         # Stop the API server
@@ -102,7 +102,7 @@ class SecureShieldAgent:
             self.logger.info("Waiting for monitor '%s' to terminate...", monitor_thread.name)
             monitor_thread.join(timeout=3.0)
 
-        self.logger.info("SecureShield AI Agent successfully terminated.")
+        self.logger.info("KeyShield AI Agent successfully terminated.")
 
     def _handle_signal(self, signum, frame):
         """

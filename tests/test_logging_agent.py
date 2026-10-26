@@ -19,7 +19,7 @@ class TestLoggingAgent(unittest.TestCase):
     def test_log_event(self):
         event = {"event_type": "TEST_EVENT", "status": "OK"}
         self.agent.log_event(event)
-        log_file = os.path.join(self.test_log_dir, "secureshield.log")
+        log_file = os.path.join(self.test_log_dir, "keyshield.log")
         self.assertTrue(os.path.exists(log_file))
 
     def test_rotate_logs(self):

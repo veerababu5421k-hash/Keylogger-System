@@ -1,5 +1,5 @@
 """
-Pydantic Data Schemas for SecureShield REST API and Agent Data Structures.
+Pydantic Data Schemas for KeyShield REST API and Agent Data Structures.
 """
 
 from pydantic import BaseModel, Field
@@ -15,7 +15,7 @@ class SecurityEventSchema(BaseModel):
     process_name: Optional[str] = None
     severity: str = "INFO"
     confidence: float = 1.0
-    source: str = "secureshield-node"
+    source: str = "keyshield-node"
     payload: Dict[str, Any] = Field(default_factory=dict)
     metadata: Dict[str, Any] = Field(default_factory=dict)
 

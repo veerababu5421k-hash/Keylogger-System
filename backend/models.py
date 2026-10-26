@@ -1,5 +1,5 @@
 """
-Database Schema & Data Models for SecureShield Backend.
+Database Schema & Data Models for KeyShield Backend.
 Supports Users, Devices, Agents, Events, Incidents, Threat Scores, AI Analyses, Mitigation Actions, and Audit Logs.
 """
 
@@ -84,7 +84,7 @@ class AuditLogRecord(Base):
     timestamp = Column(String(30), default=lambda: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
 
 # Database initialization helper
-def init_db(db_uri: str = "sqlite:///logs/secureshield.db"):
+def init_db(db_uri: str = "sqlite:///logs/keyshield.db"):
     engine = create_engine(db_uri, echo=False)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)

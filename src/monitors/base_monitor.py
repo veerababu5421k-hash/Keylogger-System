@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 
 class BaseMonitor(threading.Thread, ABC):
     """
-    Abstract Base Class for all SecureShield behavioral monitors.
+    Abstract Base Class for all KeyShield behavioral monitors.
     Manages the thread execution lifecycle, polling intervals, and error logging.
     """
     def __init__(self, name, config):
@@ -13,7 +13,7 @@ class BaseMonitor(threading.Thread, ABC):
         self.name = name
         self.config = config
         self.running = False
-        self.logger = logging.getLogger("SecureShield")
+        self.logger = logging.getLogger("KeyShield")
         
         # Determine scan interval from config based on monitor name (fallback to 5s)
         monitor_key = self.name.lower().replace("monitor", "").strip()

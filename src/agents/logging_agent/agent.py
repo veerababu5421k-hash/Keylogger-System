@@ -21,9 +21,9 @@ class LoggingAgent:
 
     def _init_structured_logger(self):
         os.makedirs(self.config.log_dir, exist_ok=True)
-        log_path = os.path.join(self.config.log_dir, "secureshield.log")
+        log_path = os.path.join(self.config.log_dir, "keyshield.log")
         
-        self.structured_logger = logging.getLogger(f"SecureShieldStructuredLog_{id(self)}")
+        self.structured_logger = logging.getLogger(f"KeyShieldStructuredLog_{id(self)}")
         self.structured_logger.setLevel(logging.INFO)
         
         if not self.structured_logger.handlers:

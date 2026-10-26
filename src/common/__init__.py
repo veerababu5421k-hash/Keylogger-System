@@ -1,5 +1,5 @@
 """
-SecureShield AI Common Utilities & Event Schemas Package.
+KeyShield AI Common Utilities & Event Schemas Package.
 """
 from src.common.events import SecurityEvent
 
